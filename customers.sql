@@ -1,0 +1,51 @@
+INSERT IGNORE INTO opencart.`customer`(
+    `customer_id`,
+    `customer_group_id`,
+    `store_id`,
+    `language_id`,
+    `firstname`,
+    `lastname`,
+    `email`,
+    `telephone`,
+    `fax`,
+    `password`,
+    `salt`,
+    `cart`,
+    `wishlist`,
+    `newsletter`,
+    `address_id`,
+    `custom_field`,
+    `ip`,
+    `status`,
+    `safe`,
+    `token`,
+    `code`,
+    `date_added`
+)
+SELECT
+    `customers_id`,
+    1,
+    1,
+    1,
+    `customers_firstname`,
+    `customers_lastname`,
+    `customers_email_address`,
+    `customers_telephone`,
+    `customers_fax`,
+    `customers_password`,
+    '',
+    '',
+    '',
+    '',
+    `customers_newsletter`,
+    `customers_default_address_id`,
+    '',
+    '',
+    `customers_status`,
+    0,
+    '',
+    now()
+FROM
+    oscommerce.`customers`
+WHERE
+    1
