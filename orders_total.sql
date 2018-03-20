@@ -1,4 +1,4 @@
-INSERT INTO [database].[opencart_orders_total_table](
+INSERT INTO opencart.order_total (
     `order_total_id`,
     `order_id`,
     `code`,
@@ -14,10 +14,6 @@ SELECT
     `value`,
     `sort_order`
 FROM
-    [database].[oscommerce_orders_total_table]
+    oscommerce.orders_toal
 WHERE
     1;
- 
-SELECT `value` FROM [database].[opencart_orders_total_table] 
-WHERE [oscommerce_orders_total_table].orders_id = [opencart_orders_total table].order_id 
-AND [oscommerce_orders_total _table].class = 'ot_total' limit 1;
