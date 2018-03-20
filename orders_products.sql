@@ -1,0 +1,27 @@
+INSERT IGNORE INTO opencart.`order_product`(
+    `order_product_id`,
+    `order_id`,
+    `product_id`,
+    `name`,
+    `model`,
+    `quantity`,
+    `price`,
+    `total`,
+    `tax`,
+    `reward`
+)
+SELECT
+    `orders_products_id`,
+    `orders_id`,
+    `products_id`,
+    `products_name`,
+    `products_model`,
+    `products_quantity`,
+    `products_price`,
+    `final_price`,
+    `products_tax`,
+    `products_stock_attributes`
+FROM
+    oscommerce.`orders_products`
+WHERE
+    1
