@@ -1,0 +1,21 @@
+INSERT IGNORE INTO opencart.`oc4x_category_description`(
+    `category_id`,
+    `language_id`,
+    `name`,
+    `description`,
+    `meta_title`,
+    `meta_description`,
+    `meta_keyword`
+)
+SELECT
+    `categories_id`,
+    `language_id`,
+    `categories_name`,
+    `categories_htc_description`,
+    `categories_htc_title_tag`,
+    `categories_htc_desc_tag`,
+    `categories_htc_keywords_tag`
+FROM
+    oscommerce.`categories_description`
+WHERE
+    1
