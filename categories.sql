@@ -1,0 +1,27 @@
+INSERT IGNORE INTO opencart.`oc4x_category`(
+    `category_id`,
+    `image`,
+    `parent_id`,
+    `top`,
+    `column`,
+    `sort_order`,
+    `status`,
+    `date_added`,
+    `date_modified`,
+    `id_categoria_google`
+)
+SELECT
+    `categories_id`,
+    `categories_image`,
+    `parent_id`,
+    0,
+    1,
+    `sort_order`,
+    1,
+    `date_added`,
+    `last_modified`,
+    ''
+FROM
+    oscommerce.`categories`
+WHERE
+    1
