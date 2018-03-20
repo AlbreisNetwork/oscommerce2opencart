@@ -1,4 +1,4 @@
-INSERT INTO [database].[opencart_orders_table] (
+INSERT INTO opencart.order (
   	`order_id`,
   	`customer_id`,
     `firstname`,
@@ -93,7 +93,8 @@ SELECT
     `delivery_address_format_id`,
     `shipping_module`,
     `shipping_module`,
-    '0.0',
+    (SELECT `value` FROM oscommerce.orders_total WHERE orders_id = oscommerce.orders.orders_id 
+AND class = 'ot_total' limit 1),
     `orders_status`,
     1,
     0,
@@ -103,7 +104,7 @@ SELECT
     `last_modified`,
     '',
     '',
-    '',
+    'http://topapostilas.com.br/',
     '',
     '',
     '',
@@ -117,4 +118,6 @@ SELECT
     '',
     '',
     ''
-FROM [database].[oscommerce_orders_table];
+FROM oscommerce.orders where 1;
+
+ 
